@@ -1,0 +1,321 @@
+.orbit-art {
+  position: relative;
+  aspect-ratio: 1;
+  min-width: 0;
+  --orbit-progress: 0;
+}
+.orbit-art:before {
+  content: "";
+  position: absolute;
+  inset: 10%;
+  border-radius: 50%;
+  background: var(--accent-light);
+  opacity: 0.5;
+}
+.orbit-art svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform: translate(var(--pointer-x, 0px), var(--pointer-y, 0px));
+  transition: transform 0.5s;
+}
+.orbit-art .orbit-grid {
+  color: var(--line);
+}
+.orbit-art .orbit-stroke {
+  stroke: var(--ink);
+  stroke-width: 0.7;
+  opacity: 0.35;
+}
+.orbit-art .orbit-red {
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+.orbit-core {
+  font: 900 105px var(--sans);
+  letter-spacing: -10px;
+  fill: var(--ink);
+}
+.orbit-label {
+  font: 8px var(--mono);
+  fill: var(--muted);
+  letter-spacing: 1px;
+}
+.orbit-dot {
+  fill: var(--accent);
+}
+.orbit-number {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  font: 9px var(--mono);
+  color: var(--muted);
+}
+.orbit-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  font: 8px var(--mono);
+  color: var(--muted);
+}
+.hero-typewriter {
+  width: 29ch;
+  min-height: 17px;
+  font: 11px var(--mono);
+  display: block;
+}
+.typewriter-caret {
+  height: 13px;
+  width: 2px;
+  background: var(--accent);
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+  animation: caret 1s steps(2) infinite;
+}
+.signal-line {
+  height: 1px;
+  background: var(--line);
+  position: relative;
+}
+.signal-line > i {
+  position: absolute;
+  left: 0;
+  top: -2px;
+  height: 5px;
+  width: 40px;
+  background: var(--accent);
+  transform: translateX(var(--signal-x, 0px));
+}
+.graphic-cross {
+  font: 22px var(--mono);
+  color: var(--accent);
+}
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.tags span {
+  font: 9px var(--mono);
+  color: var(--muted);
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+}
+.project-visual {
+  background: var(--paper);
+  padding: 65px 45px;
+  position: relative;
+  overflow: hidden;
+  min-height: 475px;
+  display: grid;
+  place-items: center;
+  perspective: 1200px;
+}
+.project-visual .visual-label {
+  position: absolute;
+  left: 25px;
+  top: 22px;
+  font-size: 8px;
+  color: var(--muted);
+}
+.project-visual > img {
+  width: 100%;
+  aspect-ratio: 1.7;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+.pdf-window {
+  background: var(--white);
+  width: min(100%, 760px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: relative;
+  transform: rotateX(var(--project-tilt, 0deg))
+    translateY(var(--project-y, 0px));
+  transform-origin: center bottom;
+}
+.window-bar {
+  height: 38px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 17px;
+  font: 8px var(--mono);
+  color: var(--muted);
+}
+.window-dots {
+  display: flex;
+  gap: 5px;
+}
+.window-dots i {
+  width: 5px;
+  height: 5px;
+  background: var(--line);
+  border-radius: 50%;
+}
+.pdf-body {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  min-height: 300px;
+}
+.pdf-sidebar {
+  border-right: 1px solid var(--line);
+  padding: 25px 17px;
+  font-size: 10px;
+}
+.pdf-symbol {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  margin-bottom: 27px;
+}
+.pdf-symbol b {
+  background: var(--accent);
+  color: white;
+  padding: 8px 6px;
+  font-size: 8px;
+}
+.pdf-sidebar > span {
+  display: block;
+  margin: 15px 0;
+  color: var(--muted);
+}
+.pdf-sidebar > span:first-of-type {
+  color: var(--accent);
+}
+.pdf-content {
+  padding: 35px;
+}
+.pdf-content h3 {
+  font-size: 30px;
+  margin-bottom: 9px;
+}
+.pdf-content > p {
+  font-size: 10px;
+  color: var(--muted);
+}
+.mini-tools {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 25px;
+}
+.mini-tool {
+  padding: 16px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  min-height: 85px;
+}
+.mini-tool svg {
+  width: 24px;
+  height: 24px;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.mini-tool > span {
+  font-size: 9px;
+}
+.floating-document {
+  position: absolute;
+  background: var(--accent);
+  color: white;
+  right: 3%;
+  bottom: 8%;
+  width: 105px;
+  height: 130px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+  transform: translateY(var(--document-y, 0px)) rotate(9deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.floating-document:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 13px solid transparent;
+  border-top-color: var(--paper);
+  border-right-color: var(--paper);
+}
+.floating-document > b {
+  font-size: 22px;
+  letter-spacing: -1px;
+}
+.floating-document > span {
+  font: 8px var(--mono);
+}
+.project-caption {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  color: var(--muted);
+}
+.project-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  padding: 35px 0 0;
+}
+.project-info h3 {
+  font-size: 38px;
+  margin: 14px 0;
+}
+.project-info p {
+  font-size: 14px;
+  max-width: 420px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.project-info .text-link {
+  margin-top: 15px;
+}
+.project-entry + .project-entry {
+  margin-top: 80px;
+}
+.project-index {
+  color: var(--accent);
+}
+.launch-mark {
+  position: fixed;
+  left: var(--gutter);
+  top: 95px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  z-index: 60;
+  padding: 14px 18px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  pointer-events: none;
+}
+.launch-mark span {
+  font: 8px var(--mono);
+}
+.launch-mark i {
+  width: 35px;
+  height: 2px;
+  background: var(--accent);
+  transform-origin: left;
+  animation: line-draw 0.6s both;
+}
+.focus-graphic svg {
+  width: 100%;
+  height: 100%;
+  color: var(--accent);
+}
+.principle-icon {
+  width: 115px;
+  height: 115px;
+  color: var(--accent);
+}
